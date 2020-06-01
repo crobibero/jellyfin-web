@@ -122,5 +122,8 @@ jobs:
     vmImage: 'ubuntu-latest'
 
   steps:
-  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration).all && ls -al && pwd'
+  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration).all'
     displayName: 'Run Dockerfile'
+
+  - script: 'ls -al && pwd'
+    displayName: 'Debug'
