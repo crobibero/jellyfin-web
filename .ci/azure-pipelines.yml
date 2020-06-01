@@ -125,7 +125,7 @@ jobs:
   - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration) deployment'
     displayName: 'Run Dockerfile'
 
-  - script: 'cd deployment ls -al && pwd'
+  - script: 'cd deployment && ls -al && pwd'
     displayName: 'Debug'
 
   - task: PublishPipelineArtifact@1
