@@ -103,3 +103,24 @@ jobs:
 
   - script: 'yarn run stylelint'
     displayName: 'Run Stylelint'
+
+- job: Package
+  displayName: 'Package'
+
+  strategy:
+    matrix:
+      Centos:
+        BuildConfiguration: centos
+      Debian:
+        BuildConfiguration: debian
+      Ubuntu:
+        BuildConfiguration: ubuntu
+      Portable:
+        BuildConfiguration: portable
+
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration).all && ls -al && pwd'
+    displayName: 'Run Dockerfile'
