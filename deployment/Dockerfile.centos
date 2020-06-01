@@ -18,7 +18,7 @@ RUN curl -fSsLo /etc/yum.repos.d/yarn.repo https://dl.yarnpkg.com/rpm/yarn.repo 
  && yum install -y yarn
 
 # Link to build script
-RUN ln -sf ${SOURCE_DIR}/deployment/build.centos.all /build.sh
+RUN ln -sf ${SOURCE_DIR}/deployment/build.centos /build.sh
 
 VOLUME ${SOURCE_DIR}/
 

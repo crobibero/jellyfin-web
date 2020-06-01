@@ -12,7 +12,7 @@ RUN dnf update -y \
  && dnf install -y @buildsys-build rpmdevtools git dnf-plugins-core nodejs-yarn autoconf automake glibc-devel
 
 # Link to build script
-RUN ln -sf ${SOURCE_DIR}/deployment/build.fedora.all /build.sh
+RUN ln -sf ${SOURCE_DIR}/deployment/build.fedora /build.sh
 
 VOLUME ${SOURCE_DIR}/
 

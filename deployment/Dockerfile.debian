@@ -16,7 +16,7 @@ RUN apt-get update \
 RUN npm install -g yarn
 
 # Link to build script
-RUN ln -sf ${SOURCE_DIR}/deployment/build.debian.all /build.sh
+RUN ln -sf ${SOURCE_DIR}/deployment/build.debian /build.sh
 
 VOLUME ${SOURCE_DIR}/
 

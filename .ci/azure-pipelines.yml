@@ -109,12 +109,12 @@ jobs:
 
   strategy:
     matrix:
-      Centos:
+      CentOS:
         BuildConfiguration: centos
       Debian:
         BuildConfiguration: debian
-      Ubuntu:
-        BuildConfiguration: ubuntu
+      Fedora:
+        BuildConfiguration: fedora
       Portable:
         BuildConfiguration: portable
 
@@ -122,8 +122,14 @@ jobs:
     vmImage: 'ubuntu-latest'
 
   steps:
-  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration).all .'
+  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration) deployment'
     displayName: 'Run Dockerfile'
 
-  - script: 'ls -al && pwd'
+  - script: 'cd deployment ls -al && pwd'
     displayName: 'Debug'
+
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish Release'
+    inputs:
+      targetPath: '$(Build.SourcesDirectory)/deployment/dist/*'
+      artifactName: 'jellyfin-web-$(BuildConfiguration)'
