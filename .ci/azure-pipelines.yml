@@ -122,10 +122,13 @@ jobs:
     vmImage: 'ubuntu-latest'
 
   steps:
-  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration) deployment'
+  - script: 'cd deployment && mkdir dist'
+    displayName: 'Debug'
+
+  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration) -v deployment/dist:/dist deployment'
     displayName: 'Run Dockerfile'
 
-  - script: 'ls -al && pwd && cd dist && ls -al'
+  - script: 'cd deployment/dist && ls -al'
     displayName: 'Debug'
 
   - task: PublishPipelineArtifact@1
