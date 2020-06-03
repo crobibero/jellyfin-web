@@ -125,7 +125,10 @@ jobs:
   - script: 'cd deployment && mkdir dist'
     displayName: 'Debug'
 
-  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration) -v deployment/dist:/dist deployment'
+  - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration) -t jellyfin-web-$(BuildConfiguration) deployment'
+    displayName: 'Build Dockerfile'
+
+  - script: 'docker run -v deployment/dist:/dist jellyfin-web-$(BuildConfiguration)'
     displayName: 'Run Dockerfile'
 
   - script: 'cd deployment/dist && ls -al'
