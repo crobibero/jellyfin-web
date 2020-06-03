@@ -128,7 +128,7 @@ jobs:
   - script: 'docker build -f deployment/Dockerfile.$(BuildConfiguration) -t jellyfin-web-$(BuildConfiguration) deployment'
     displayName: 'Build Dockerfile'
 
-  - script: 'docker run -v deployment/dist:/dist jellyfin-web-$(BuildConfiguration)'
+  - script: 'docker run -v $(pwd)/deployment/dist:/dist jellyfin-web-$(BuildConfiguration)'
     displayName: 'Run Dockerfile'
 
   - script: 'cd deployment/dist && ls -al'
