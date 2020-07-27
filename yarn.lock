@@ -6233,10 +6233,10 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-jellyfin-apiclient@^1.2.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/jellyfin-apiclient/-/jellyfin-apiclient-1.2.1.tgz#1da577f7e22c37be8ec23c139b9ddab2c36da5a2"
-  integrity sha512-5aNtUq7YsoDPZ0LL6cq55HDnSTVfECfw05hbPFxNsFlUogEiHwaoIz+ahWRO13OUFQJuiu8f3fy16glcGzrBIQ==
+jellyfin-apiclient@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/jellyfin-apiclient/-/jellyfin-apiclient-1.4.1.tgz#5e544a19bc001b16669eb7ecf46bb7d652365e41"
+  integrity sha512-BTTRucQ4tCLyiZ9kR9nAoxqxYp5/z+MCzkayy9vmMZ5C7jlVVsnxAXuuZjoa+AgXMjohXcM5Ci54myfJM1pRkA==
 
 "jellyfin-noto@https://github.com/jellyfin/jellyfin-noto":
   version "1.0.3"
